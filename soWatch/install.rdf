@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:em="http://www.mozilla.org/2004/em-rdf#">
+  <Description about="urn:mozilla:install-manifest">
+    <em:id>sowatch@jc3213.github</em:id>
+    <em:updateURL>https://raw.githubusercontent.com/jc3213/Misc/master/Update/soWatch.rdf</em:updateURL>
+    <em:updateKey>MIGfMA0GCSqGSIb3DQEBAQUAA4GNADCBiQKBgQC8NYE9n9t9hlOg8lttm15fJJ9lyd0sqNcmrCxg2J0fcznCXExKSr5wgGzXzqXMljEV/qHWJdkzqjz2I0WZ7z9PAXmO/aFYfrGHDLrsA+hVAd+35zaaQhK1NzA4t9q1YZc3drjdfQ7WEIPywevA8hbSPTTt28W6FiEVxhISbBkrIQIDAQAB</em:updateKey>
+    <em:optionsType>2</em:optionsType>
+    <em:type>2</em:type>
+    <em:bootstrap>true</em:bootstrap>
+    <em:multiprocessCompatible>true</em:multiprocessCompatible>
+    <em:version>1.4.0ESR</em:version>
+    <em:name>soWatch!</em:name>
+    <em:creator>jc3213</em:creator>
+    <em:contributor>Harv.c</em:contributor>
+    <em:contributor>15536900</em:contributor>
+    <em:contributor>catcat520</em:contributor>
+    <em:contributor>ywzhaiqi</em:contributor>
+    <em:contributor>Kelo</em:contributor>
+    <em:homepageURL>https://github.com/jc3213/soWatch/</em:homepageURL>
+    <em:description>The lesser function version of soWatch! mk2. It also has a high risk of violating the local law of China. Use at your own risk！</em:description>
+    <em:localized>
+      <Description>
+        <em:locale>ja</em:locale>
+        <em:name>soWatch!</em:name>
+        <em:creator>jc3213</em:creator>
+        <em:contributor>Harv.c</em:contributor>
+        <em:contributor>15536900</em:contributor>
+        <em:contributor>catcat520</em:contributor>
+        <em:contributor>ywzhaiqi</em:contributor>
+        <em:contributor>Kelo</em:contributor>
+        <em:homepageURL>https://github.com/jc3213/soWatch/</em:homepageURL>
+        <em:description>劣化版 soWatch! mk2 、中華本土の法律に違反する可能性があるため、自己責任で使用してください！</em:description>
+      </Description>
+    </em:localized>
+    <em:localized>
+      <Description>
+        <em:locale>zh-CN</em:locale>
+        <em:name>soWatch!</em:name>
+        <em:creator>jc3213</em:creator>
+        <em:contributor>Harv.c</em:contributor>
+        <em:contributor>15536900</em:contributor>
+        <em:contributor>catcat520</em:contributor>
+        <em:contributor>ywzhaiqi</em:contributor>
+        <em:contributor>Kelo</em:contributor>
+        <em:homepageURL>https://github.com/jc3213/soWatch/</em:homepageURL>
+        <em:description>本扩展为 soWatch! mk2 的劣化版本， 它很可能违反中国本土的法律， 用户自行承担使用风险！</em:description>
+      </Description>
+    </em:localized>
+    <em:targetApplication><!-- Firefox -->
+      <Description>
+        <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
+        <em:minVersion>10.0</em:minVersion>
+        <em:maxVersion>47.0a1</em:maxVersion>
+      </Description>
+    </em:targetApplication>
+  </Description>
+</RDF>
