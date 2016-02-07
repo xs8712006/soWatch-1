@@ -1,0 +1,78 @@
+<?xml version="1.0"?>
+<!DOCTYPE page SYSTEM "chrome://sowatch/locale/options.dtd">
+<vbox xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+<setting type="control">
+  <button id="sowatch-reset" label="&sowatch-reset;"/>
+</setting>
+<setting pref="extensions.sowatch.offline" type="bool" title="&sowatch-local;"/>
+<setting pref="extensions.sowatch.server" type="string" title="&sowatch-server;"/>
+<setting type="control">
+  <button id="sowatch-newtab" label="&sowatch-newtab;"/>
+</setting>
+<setting type="control">
+  <button id="sowatch-opendir" label="&sowatch-opendir;"/>
+</setting>
+<setting pref="extensions.sowatch.youku" type="menulist" title="&sowatch-youku;">
+  <menulist>
+    <menupopup id="sowatch-youku">
+      <menuitem value="1" label="&sowatch-player;"/>
+      <menuitem value="2" label="&sowatch-filter;"/>
+      <menuitem value="0" label="&sowatch-none;"/>
+    </menupopup>
+  </menulist>
+</setting>
+<setting pref="extensions.sowatch.tudou" type="menulist" title="&sowatch-tudou;">
+  <menulist>
+    <menupopup id="sowatch-tudou">
+      <menuitem value="1" label="&sowatch-player;"/>
+      <menuitem value="2" label="&sowatch-filter;"/>
+      <menuitem value="0" label="&sowatch-none;"/>
+    </menupopup>
+  </menulist>
+</setting>
+<setting pref="extensions.sowatch.iqiyi" type="menulist" title="&sowatch-iqiyi;">
+  <menulist>
+    <menupopup id="sowatch-iqiyi">
+      <menuitem value="1" label="&sowatch-player;"/>
+      <menuitem value="2" label="&sowatch-filter;"/>
+      <menuitem value="0" label="&sowatch-none;"/>
+    </menupopup>
+  </menulist>
+</setting>
+<setting pref="extensions.sowatch.letv" type="menulist" title="&sowatch-letv;">
+  <menulist>
+    <menupopup id="sowatch-letv">
+      <menuitem value="1" label="&sowatch-player;"/>
+      <menuitem value="2" label="&sowatch-filter;"/>
+      <menuitem value="0" label="&sowatch-none;"/>
+    </menupopup>
+  </menulist>
+</setting>
+<setting pref="extensions.sowatch.sohu" type="menulist" title="&sowatch-sohu;">
+  <menulist>
+    <menupopup id="sowatch-sohu">
+      <menuitem value="1" label="&sowatch-player;"/>
+      <menuitem value="2" label="&sowatch-filter;"/>
+      <menuitem value="0" label="&sowatch-none;"/>
+    </menupopup>
+  </menulist>
+</setting>
+<setting pref="extensions.sowatch.pptv" type="menulist" title="&sowatch-pptv;">
+  <menulist>
+    <menupopup id="sowatch-pptv">
+      <menuitem value="1" label="&sowatch-player;"/>
+      <menuitem value="2" label="&sowatch-filter;"/>
+      <menuitem value="0" label="&sowatch-none;"/>
+    </menupopup>
+  </menulist>
+</setting>
+<setting pref="extensions.sowatch.qq" type="menulist" title="&sowatch-qq;">
+  <menulist>
+    <menupopup id="sowatch-qq">
+      <menuitem value="1" label="&sowatch-player;" disabled="true"/>
+      <menuitem value="2" label="&sowatch-filter;"/>
+      <menuitem value="0" label="&sowatch-none;"/>
+    </menupopup>
+  </menulist>
+</setting>
+</vbox>
