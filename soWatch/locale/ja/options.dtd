@@ -1,0 +1,18 @@
+<!ENTITY sowatch-youku "設定：Youku">
+<!ENTITY sowatch-tudou "設定：Tudou">
+<!ENTITY sowatch-iqiyi "設定：iQiyi">
+<!ENTITY sowatch-letv "設定：Letv">
+<!ENTITY sowatch-sohu "設定：Sohu">
+<!ENTITY sowatch-pptv "設定：PPTV">
+<!ENTITY sowatch-qq "設定：QQ">
+
+<!ENTITY sowatch-player "特製プレイヤーの使用">
+<!ENTITY sowatch-filter "XMLリクエストの遮断">
+<!ENTITY sowatch-none "サイト運営を支援します">
+
+<!ENTITY sowatch-offline "オフラインプレイヤー">
+<!ENTITY sowatch-server "既定のサーバー">
+
+<!ENTITY sowatch-reset "初期値に復元する">
+<!ENTITY sowatch-newtab "ダウンロードへ...">
+<!ENTITY sowatch-opendir "ディレクトリへ...">
