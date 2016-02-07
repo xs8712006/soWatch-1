@@ -1,0 +1,18 @@
+<!ENTITY sowatch-youku "Option: Youku">
+<!ENTITY sowatch-tudou "Option: Tudou">
+<!ENTITY sowatch-iqiyi "Option: iQiyi">
+<!ENTITY sowatch-letv "Option: Letv">
+<!ENTITY sowatch-sohu "Option: Sohu">
+<!ENTITY sowatch-pptv "Option: PPTV">
+<!ENTITY sowatch-qq "Option: QQ">
+
+<!ENTITY sowatch-player "Enable mod Player">
+<!ENTITY sowatch-filter "Filter xml Request">
+<!ENTITY sowatch-none "Support the Website">
+
+<!ENTITY sowatch-offline "Offline Players">
+<!ENTITY sowatch-server "Defined Server">
+
+<!ENTITY sowatch-reset "Restore Default">
+<!ENTITY sowatch-newtab "Open Download Page...">
+<!ENTITY sowatch-opendir "Open Folder Window...">
