@@ -1,0 +1,18 @@
+<!ENTITY sowatch-youku "设置：优酷">
+<!ENTITY sowatch-tudou "设置：土豆">
+<!ENTITY sowatch-iqiyi "设置：爱奇艺">
+<!ENTITY sowatch-letv "设置：乐视网">
+<!ENTITY sowatch-sohu "设置：搜狐视频">
+<!ENTITY sowatch-pptv "设置：PPTV聚力">
+<!ENTITY sowatch-qq "设置：腾讯视频">
+
+<!ENTITY sowatch-player "特别版播放器">
+<!ENTITY sowatch-filter "拦截XML请求">
+<!ENTITY sowatch-none "支持网站发展">
+
+<!ENTITY sowatch-offline "离线播放器">
+<!ENTITY sowatch-server "自定义服务器">
+
+<!ENTITY sowatch-reset "恢复初始值">
+<!ENTITY sowatch-newtab "打开下载页...">
+<!ENTITY sowatch-opendir "打开文件夹...">
