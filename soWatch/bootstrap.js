@@ -119,8 +119,11 @@ function readOption() {
     }
   }
 
-  if (Storage.option["server"].value) Storage.file.link = Storage.option["server"].value;
-  else Storage.file.link = Storage.file["server"];
+  if (Storage.option["server"].value) {
+    Storage.file.link = Storage.option["server"].value;
+  } else {
+    Storage.file.link = Storage.file["server"];
+  }
 
   Storage.file.path = "file:///" + Storage.file["folder"].replace(/\\/g, "/") + "/";
 
@@ -139,16 +142,22 @@ function pendingOption() {
 
       if (Storage.website[i].hasPlayer) {
         getRule(Storage.website[i].player);
-        if (Storage.website[i].value == 1) setRule("on", "player", Storage.website[i].player);
-        else setRule("off", "player", Storage.website[i].player);
+        if (Storage.website[i].value == 1) {
+          setRule("on", "player", Storage.website[i].player);
+        } else {
+          setRule("off", "player", Storage.website[i].player);
+        }
       } else {
         if (Storage.website[i].value == 1) Preference.setValue(Storage.website[i].prefs);
       }
 
       if (Storage.website[i].hasFilter) {
         getRule(Storage.website[i].filter);
-        if (Storage.website[i].value == 2) setRule("on", "filter", Storage.website[i].filter);
-        else setRule("off", "filter", Storage.website[i].filter);
+        if (Storage.website[i].value == 2) {
+          setRule("on", "filter", Storage.website[i].filter);
+        } else {
+          setRule("off", "filter", Storage.website[i].filter);
+        }
       } else {
         if (Storage.website[i].value == 2) Preference.setValue(Storage.website[i].prefs);
       }
@@ -167,8 +176,7 @@ function handleWrapper() {
         if ((major.value == 1 && minor.value != 1) || (major.value != 1 && minor.value == 1)) {
           Preference.setValue(minor.prefs, major.value);
         }
-      }
-      if (entry == "filter") {
+      } else if (entry == "filter") {
         if ((major.value == 2 && minor.value == 0) || (major.value == 0 && minor.value == 2)) {
           Preference.setValue(minor.prefs, major.value);
         }
@@ -180,6 +188,7 @@ function handleWrapper() {
 function getRule(rulelist) {
   rulelist.forEach(function (element, index, array) {
     var name = element[0], player = element[1], remote = element[2], filter = element[3], pattern = element[4];
+
     if (player != undefined) {
       if (!remote) {
         Storage.player[name] = {
@@ -187,13 +196,14 @@ function getRule(rulelist) {
           pattern: pattern
         };
       } else {
-          Storage.player[name] = {
+        Storage.player[name] = {
           offline: Storage.file.path + player,
           online: Storage.file.link + player,
           pattern: pattern
         };
       }
     }
+
     if (filter != undefined) {
       Storage.filter[name] = {
         secured: filter,
@@ -208,8 +218,7 @@ function setRule(state, type, rulelist) {
     var object = Storage[type][element[0]];
     if (state == "on") {
       object["target"] = object["pattern"];
-    }
-    if (state == "off") {
+    } else if (state == "off") {
       object["target"] = null;
     }
   });
@@ -220,11 +229,9 @@ var Preference = {
   getValue: function (probe) {
     if (probe.type == "bool") {
       return this.branch.getBoolPref(probe.name);
-    }
-    if (probe.type == "integer") {
+    } else if (probe.type == "integer") {
       return this.branch.getIntPref(probe.name);
-    }
-    if (probe.type == "string") {
+    } else if (probe.type == "string") {
       return this.branch.getComplexValue(probe.name, Ci.nsISupportsString).data;
     }
   },
@@ -232,11 +239,9 @@ var Preference = {
     if (value == undefined) value = probe.value;
     if (probe.type == "bool") {
       this.branch.setBoolPref(probe.name, value);
-    }
-    if (probe.type == "integer") {
+    } else if (probe.type == "integer") {
       this.branch.setIntPref(probe.name, value);
-    }
-    if (probe.type == "string") {
+    } else if (probe.type == "string") {
       var character = Cc["@mozilla.org/supports-string;1"].createInstance(Ci.nsISupportsString);
       character.data = value;
       this.branch.setComplexValue(probe.name, Ci.nsISupportsString, character);
@@ -248,8 +253,8 @@ var Preference = {
 };
 
 var HttpRequest = {
-  getPlayer: function (object, rule, request) {
-    request.suspend();
+  getPlayer: function (object, rule, httpChannel) {
+    httpChannel.suspend();
     NetUtil.asyncFetch(object, function (inputStream, status) {
       var binaryOutputStream = Cc["@mozilla.org/binaryoutputstream;1"].createInstance(Ci.nsIBinaryOutputStream);
       var storageStream = Cc["@mozilla.org/storagestream;1"].createInstance(Ci.nsIStorageStream);
@@ -260,33 +265,38 @@ var HttpRequest = {
       binaryOutputStream.writeBytes(data, count);
       rule["storageStream"] = storageStream;
       rule["count"] = count;
-      request.resume();
+      httpChannel.resume();
     });
   },
-  getFilter: function (rule, request) {
-    if (rule["secured"]) request.suspend();
-    else request.cancel(Cr.NS_BINDING_ABORTED);
+  getFilter: function (rule, httpChannel) {
+    if (rule["secured"]) {
+      httpChannel.suspend();
+    } else {
+      httpChannel.cancel(Cr.NS_BINDING_ABORTED);
+    }
   },
-  filter: function (subject) {
+  frontEnd: function (subject) {
     var httpChannel = subject.QueryInterface(Ci.nsIHttpChannel);
-
+    this.filter(httpChannel);
+    if (!httpChannel.URI.spec.match(/\.(swf|xml)/i)) return;
+    this.player(subject, httpChannel);
+  },
+  filter: function (httpChannel) {
     for (var i in Storage.filter) {
       var rule = Storage.filter[i];
       if (rule["target"] && rule["target"].test(httpChannel.URI.spec)) {
         if (i.includes("iqiyi")) {  // issue #7 细节补丁
           this.iqiyi ++;
-          if (this.iqiyi != 2) this.getFilter(rule, httpChannel);
+          if (this.iqiyi != 2) {
+            this.getFilter(rule, httpChannel);
+          }
         } else {
           this.getFilter(rule, httpChannel);
         }
       }
     }
   },
-  player: function (subject) {
-    var httpChannel = subject.QueryInterface(Ci.nsIHttpChannel);
-
-    if (!httpChannel.URI.spec.match(/\.(swf|xml)/i)) return;
-
+  player: function (subject, httpChannel) {
     for (var i in Storage.website) {
       if (Storage.website[i].onSite.test(httpChannel.URI.host)) {
         if (i == "iqiyi") { // issues #7 前置补丁
@@ -306,7 +316,7 @@ var HttpRequest = {
             this.getPlayer(rule.offline, rule, httpChannel);
           } else {
             this.getPlayer(rule.online, rule, httpChannel);
-		  }
+          }
         }
         var newListener = new TrackingListener();
         subject.QueryInterface(Ci.nsITraceableChannel);
@@ -336,36 +346,25 @@ TrackingListener.prototype = {
 
 var Observer = {
   observe: function (subject, topic, data) {
-    if (topic == "addon-options-displayed" && data == "sowatch@jc3213.github") {
+    if (topic == "addon-options-displayed") {
       var document = subject.QueryInterface(Ci.nsIDOMDocument);
-
-      var alphaButton = document.getElementById("sowatch-reset");
-      alphaButton.addEventListener("command", this.restoreDefault);
-
-      var betaButton = document.getElementById("sowatch-newtab");
-      betaButton.addEventListener("command", this.openNewWebPage);
-
-      var gammaButton = document.getElementById("sowatch-opendir");
-      gammaButton.addEventListener("command", this.openDirectory);
-    } else {
-      var document = subject.QueryInterface(Ci.nsIDOMDocument);
-
-      var alphaButton = document.getElementById("sowatch-reset");
-      alphaButton.removeEventListener("command", this.restoreDefault);
-
-      var betaButton = document.getElementById("sowatch-newtab");
-      betaButton.removeEventListener("command", this.openNewWebPage);
-
-      var gammaButton = document.getElementById("sowatch-opendir");
-      gammaButton.removeEventListener("command", this.openDirectory);
-	}
+      if (data == "sowatch@jc3213.github") {
+        document.getElementById("sowatch-reset").addEventListener("command", this.restoreDefault);
+        document.getElementById("sowatch-newtab").addEventListener("command", this.openNewWebPage);
+        document.getElementById("sowatch-opendir").addEventListener("command", this.openDirectory);
+      } else {
+        document.getElementById("sowatch-reset").removeEventListener("command", this.restoreDefault);
+        document.getElementById("sowatch-newtab").removeEventListener("command", this.openNewWebPage);
+        document.getElementById("sowatch-opendir").removeEventListener("command", this.openDirectory);
+      }
+    }
 
     if (topic == "nsPref:changed") {
       readOption();
     }
+
     if (topic == "http-on-examine-response") {
-      HttpRequest.player(subject);
-      HttpRequest.filter(subject);
+      HttpRequest.frontEnd(subject);
     }
   },
   openDirectory: function (event) {
@@ -408,7 +407,8 @@ function shutdown(data, reason) {
   Observer.suspend();
 }
 
-function install(data, reason) {}
+function install(data, reason) {
+}
 
 function uninstall(data, reason) {
   if (reason == ADDON_UNINSTALL) {
