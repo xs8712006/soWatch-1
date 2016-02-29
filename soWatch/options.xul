@@ -4,7 +4,7 @@
 <setting type="control">
   <button id="sowatch-reset" label="&sowatch-reset;"/>
 </setting>
-<setting pref="extensions.sowatch.offline" type="bool" title="&sowatch-local;"/>
+<setting pref="extensions.sowatch.offline" type="bool" title="&sowatch-offline;"/>
 <setting pref="extensions.sowatch.server" type="string" title="&sowatch-server;"/>
 <setting type="control">
   <button id="sowatch-newtab" label="&sowatch-newtab;"/>
