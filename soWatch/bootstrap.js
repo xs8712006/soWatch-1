@@ -347,7 +347,19 @@ var Observer = {
 
       var gammaButton = document.getElementById("sowatch-opendir");
       gammaButton.addEventListener("command", this.openDirectory);
-    }
+    } else {
+      var document = subject.QueryInterface(Ci.nsIDOMDocument);
+
+      var alphaButton = document.getElementById("sowatch-reset");
+      alphaButton.removeEventListener("command", this.restoreDefault);
+
+      var betaButton = document.getElementById("sowatch-newtab");
+      betaButton.removeEventListener("command", this.openNewWebPage);
+
+      var gammaButton = document.getElementById("sowatch-opendir");
+      gammaButton.removeEventListener("command", this.openDirectory);
+	}
+
     if (topic == "nsPref:changed") {
       readOption();
     }
@@ -363,7 +375,7 @@ var Observer = {
   },
   openNewWebPage: function (event) {
     var window = Services.wm.getMostRecentWindow("navigator:browser");
-    window.gBrowser.selectedTab = window.gBrowser.addTab(Storage.link);
+    window.gBrowser.selectedTab = window.gBrowser.addTab(Storage.file.link);
   },
   restoreDefault: function (event) {
     for (var i in Storage.option) {
@@ -381,7 +393,7 @@ var Observer = {
   },
   suspend: function () {
     Preference.branch.removeObserver("", this);
-    Services.obs.addObserver(this, "addon-options-displayed", false);
+    Services.obs.removeObserver(this, "addon-options-displayed", false);
     Services.obs.removeObserver(this, "http-on-examine-response", false);
   },
 };
