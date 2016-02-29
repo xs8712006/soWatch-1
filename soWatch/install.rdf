@@ -9,7 +9,7 @@
     <em:type>2</em:type>
     <em:bootstrap>true</em:bootstrap>
     <em:multiprocessCompatible>true</em:multiprocessCompatible>
-    <em:version>1.4.0ESR</em:version>
+    <em:version>1.4.1ESR</em:version>
     <em:name>soWatch!</em:name>
     <em:creator>jc3213</em:creator>
     <em:contributor>Harv.c</em:contributor>
@@ -18,7 +18,7 @@
     <em:contributor>ywzhaiqi</em:contributor>
     <em:contributor>Kelo</em:contributor>
     <em:homepageURL>https://github.com/jc3213/soWatch/</em:homepageURL>
-    <em:description>The lesser function version of soWatch! mk2. It also has a high risk of violating the local law of China. Use at your own risk！</em:description>
+    <em:description>Lesser function of soWatch! mk2. It also has a high risk of violating the local law of China. Use at your own risk!</em:description>
     <em:localized>
       <Description>
         <em:locale>ja</em:locale>
@@ -30,7 +30,7 @@
         <em:contributor>ywzhaiqi</em:contributor>
         <em:contributor>Kelo</em:contributor>
         <em:homepageURL>https://github.com/jc3213/soWatch/</em:homepageURL>
-        <em:description>劣化版 soWatch! mk2 、中華本土の法律に違反する可能性があるため、自己責任で使用してください！</em:description>
+        <em:description>劣化した soWatch! mk2 です、本土の法律に違反するリスクがあるため、自己責任で使用してください！</em:description>
       </Description>
     </em:localized>
     <em:localized>
@@ -44,7 +44,7 @@
         <em:contributor>ywzhaiqi</em:contributor>
         <em:contributor>Kelo</em:contributor>
         <em:homepageURL>https://github.com/jc3213/soWatch/</em:homepageURL>
-        <em:description>本扩展为 soWatch! mk2 的劣化版本， 它很可能违反中国本土的法律， 用户自行承担使用风险！</em:description>
+        <em:description>本扩展为 soWatch! mk2 的劣化版本， 它很可能会触犯中国国内的法律， 用户需自行承担使用风险！</em:description>
       </Description>
     </em:localized>
     <em:targetApplication><!-- Firefox -->
