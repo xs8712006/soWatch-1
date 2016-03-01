@@ -51,7 +51,7 @@ var Website = [
     "iqiyi",
     0,
     /iqiyi\.com/i,
-    [true, [["iqiyi_v5", "iqiyi5.swf", true, null, /http:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/MainPlayer.*\.swf/i], ["iqiyi_out", "iqiyi_out.swf", true, null, /https?:\/\/www\.iqiyi\.com\/(common\/flash)?player\/\d+\/(Share|Enjoy)?Player.*\.swf/i]]],
+    [true, [["iqiyi_v5", "iqiyi5.swf", true, null, /http:\/\/www\.iqiyi\.com\/common\/flashplayer\/\d+\/(MainPlayer.*|1355f98c2359)\.swf/i], ["iqiyi_out", "iqiyi_out.swf", true, null, /https?:\/\/www\.iqiyi\.com\/(common\/flash)?player\/\d+\/(Share|Enjoy)?Player.*\.swf/i]]],
     [true, [["iqiyi_filter", null, null, false, /http:\/\/(\w+\.){3}\w+\/videos\/other\/\d+\/(\w{2}\/){2}\w{32}\.(f4v|hml)/i]]]
   ],
   [
