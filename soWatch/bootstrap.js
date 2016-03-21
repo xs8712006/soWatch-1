@@ -59,7 +59,7 @@ var Website = [
     0,
     /le\.com/i,
     [true, [["letv_player", "letv.swf", true, null, /http:\/\/.*\.letv(cdn)?\.com\/.*(new)?player\/((SDK)?Letv|swf)Player\.swf/i], ["letv_pccs", "http://www.le.com/cmsdata/playerapi/pccs_sdk_20141113.xml", false, null, /http:\/\/www\.le\.com\/cmsdata\/playerapi\/pccs_(?!(.*live|sdk)).*_?(\d+)\.xml/i]]],
-    [true, [["letv_filter", null, null, false, /http:\/\/(\d+\.){3}\d+\/(\d{1,3}\/){3}letv-gug\/\d{1,3}\/ver.+avc.+aac.+\.letv/i], ["letv_pause", null, null, false, /http:\/\/i\d\.letvimg\.com\/lc\d+_(gugwl|diany)\/(\d+\/){4}.*\.(jpg|swf)/i]]]
+    [true, [["letv_filter", null, null, false, /http:\/\/(\d+\.){3}\d+\/(\d{1,3}\/){3}letv-gug\/\d{1,3}\/ver.+avc.+aac.+\.mp4/i], ["letv_pause", null, null, false, /http:\/\/i\d\.letvimg\.com\/lc\d+_(gugwl|diany)\/(\d+\/){4}.*\.(jpg|swf)/i]]]
   ],
   [
     "sohu",
