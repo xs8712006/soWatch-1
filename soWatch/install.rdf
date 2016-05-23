@@ -9,7 +9,7 @@
     <em:type>2</em:type>
     <em:bootstrap>true</em:bootstrap>
     <em:multiprocessCompatible>true</em:multiprocessCompatible>
-    <em:version>1.4.4ESR</em:version>
+    <em:version>1.4.5ESR</em:version>
     <em:name>soWatch!</em:name>
     <em:creator>jc3213</em:creator>
     <em:contributor>Harv.c</em:contributor>
@@ -51,7 +51,7 @@
       <Description>
         <em:id>{ec8030f7-c20a-464f-9b0e-13a3a9e97384}</em:id>
         <em:minVersion>10.0</em:minVersion>
-        <em:maxVersion>47.0a1</em:maxVersion>
+        <em:maxVersion>*</em:maxVersion>
       </Description>
     </em:targetApplication>
   </Description>
