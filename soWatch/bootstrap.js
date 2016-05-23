@@ -74,13 +74,6 @@ var Website = [
     /pptv\.com/i,
     [true, [["pptv_player", "player4player2.swf", true, null, /http:\/\/player.pplive.cn\/ikan\/.*\/player4player2\.swf/i]]],
     [true, [["pptv_filter", null, null, false, /http:\/\/de\.as\.pptv\.com\/ikandelivery\/vast\/.+draft/i]]]
-  ],
-  [
-    "qq",
-    0,
-    /qq\.com/i,
-    [false, []],
-    [true, [["qq_filter", null, null, false, /http:\/\/(\d+\.){3}\d+\/vmind\.qqvideo\.tc\.qq\.com\/.*\.mp4\?vkey/i], ["qq_pause", null, null, false, /http:\/\/\w+\.gtimg\.com\/qqlive\//i]]]
   ]
 ];
 
