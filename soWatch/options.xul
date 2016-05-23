@@ -66,13 +66,4 @@
     </menupopup>
   </menulist>
 </setting>
-<setting pref="extensions.sowatch.qq" type="menulist" title="&sowatch-qq;">
-  <menulist>
-    <menupopup id="sowatch-qq">
-      <menuitem value="1" label="&sowatch-player;" disabled="true"/>
-      <menuitem value="2" label="&sowatch-filter;"/>
-      <menuitem value="0" label="&sowatch-none;"/>
-    </menupopup>
-  </menulist>
-</setting>
 </vbox>
